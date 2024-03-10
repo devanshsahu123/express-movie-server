@@ -1,0 +1,272 @@
+{
+	"info": {
+		"_postman_id": "33673443-392c-4b42-ba57-3706b729ad03",
+		"name": "interview-project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33063820"
+	},
+	"item": [
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "admin-signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"devanshsahu7000@gmail.com\",\r\n    \"password\":\"Admin@1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{chatApp}}/signup",
+							"host": [
+								"{{chatApp}}"
+							],
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admin-login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"devanshsahu7000@gmail.com\",\r\n    \"password\":\"Admin@123\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{chatApp}}/login",
+							"host": [
+								"{{chatApp}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addMovie",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.ZGV2YW5zaHNhaHU3MDAwQGdtYWlsLmNvbQ.EcN5Sj7jF5DOI-JzQMv6pyL5gvIZMEuIjhQv9JKwwiY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Inception 999\",\r\n  \"releaseYear\": 2000,\r\n  \"genre\": \"Si\",\r\n  \"rating\": 8.7,\r\n  \"streamLink\":\"https://chat.openai.com/c/8d3b100e-87a1-473a-b53e-3d432d4d2adf\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{chatApp}}/movies",
+							"host": [
+								"{{chatApp}}"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateMovie",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.ZGV2YW5zaHNhaHU3MDAwQGdtYWlsLmNvbQ.EcN5Sj7jF5DOI-JzQMv6pyL5gvIZMEuIjhQv9JKwwiY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n//   \"title\": \"Inception\",\r\n  \"releaseYear\": 2098\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{chatApp}}/movies/65ede37b0edd9f17cf53d712",
+							"host": [
+								"{{chatApp}}"
+							],
+							"path": [
+								"movies",
+								"65ede37b0edd9f17cf53d712"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteMovie",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.ZGV2YW5zaHNhaHU3MDAwQGdtYWlsLmNvbQ.EcN5Sj7jF5DOI-JzQMv6pyL5gvIZMEuIjhQv9JKwwiY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Inception 99\",\r\n  \"releaseYear\": 2099,\r\n  \"genre\": \"Sci-Fi99\",\r\n  \"rating\": 8.9,\r\n  \"streamLink\":\"https://chat.openai.com/c/8d3b100e-87a1-473a-b53e-3d432d4d2adf99\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{chatApp}}/movies/65ede37b0edd9f17cf53d712",
+							"host": [
+								"{{chatApp}}"
+							],
+							"path": [
+								"movies",
+								"65ede37b0edd9f17cf53d712"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "getMoviesList",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.ZGV2YW5zaHNhaHU3MDAwQGdtYWlsLmNvbQ.EcN5Sj7jF5DOI-JzQMv6pyL5gvIZMEuIjhQv9JKwwiY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Inception 99\",\r\n  \"releaseYear\": 2099,\r\n  \"genre\": \"Sci-Fi99\",\r\n  \"rating\": 8.9,\r\n  \"streamLink\":\"https://chat.openai.com/c/8d3b100e-87a1-473a-b53e-3d432d4d2adf99\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{chatApp}}/movies",
+							"host": [
+								"{{chatApp}}"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getMovieBySearch",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.ZGV2YW5zaHNhaHU3MDAwQGdtYWlsLmNvbQ.EcN5Sj7jF5DOI-JzQMv6pyL5gvIZMEuIjhQv9JKwwiY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Inception 99\",\r\n  \"releaseYear\": 2099,\r\n  \"genre\": \"Sci-Fi99\",\r\n  \"rating\": 8.9,\r\n  \"streamLink\":\"https://chat.openai.com/c/8d3b100e-87a1-473a-b53e-3d432d4d2adf99\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{chatApp}}/search?q=si",
+							"host": [
+								"{{chatApp}}"
+							],
+							"path": [
+								"search"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "si"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "chatApp",
+			"value": "http://localhost:3003"
+		}
+	]
+}
